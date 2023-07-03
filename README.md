@@ -12,7 +12,7 @@ pip install .
 check out the jupyter notebooks in the examples folder 
 
 # Documentation
-can be found here [this documentation](https://github.com/Borrdom/Pylomer/main/tree/docs).
+can be found here [this documentation](https://github.com/Borrdom/Pylomer/tree/main/docs).
 
 # License information
 
