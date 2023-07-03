@@ -1,55 +1,34 @@
-import casadi as cs
+
 import numpy as np
-R,Nav=8.31448,6.022E23
-class FloryFilm:
-    T=298.15
-    p=1.013E5
-    def __init__(self,comp,chi):
-        self.comp=comp
-        self.nc=len(comp)
-        self.chi=chi
 
-    def FH(self):
-        nc=self.nc
-        comp=self.comp
-        ni=cs.SX.sym("ni",nc)
-        Mi=cs.SX.ones(nc)
-        rho0i=cs.SX.ones(nc)
-        for i in range(nc):
-            Mi[i]=comp[i]["Mi"]
-            rho0i[i]=comp[i]["rho0"]
-        Voi=Mi/rho0i
-        wi=ni*Mi/cs.sum1(ni*Mi)
-        xhi=np.zeros((nc,nc))
-        xhi[np.triu_indices(nc, k=1)]=self.chi
-        xhi=cs.SX(xhi)
-        #phii=xi*Mi/rho0i/cs.sum1(xi*Mi/rho0i)
-        Vi=ni*Voi/cs.sum1(ni*Voi)
-        #wi=xi*Mi/cs.sum1(xi*Mi)
-        delGERT=cs.sum1(ni*cs.log(Vi))+cs.sum1((xhi@Vi)*ni)
-        lnai=cs.gradient(delGERT,ni)
-        ai=cs.exp(lnai)
+def lngi(wi,Mi,rho0i,chi=None):
+    """
+    Compute the glass transition temperature of a mixture  
+    
+    Args:
+        wi (array_like): 2D Array of weight fractions [number of components,number of Points]
+        Mi (array_like): pure component glass transition temperature /K
+        rho0i (optional,array_like) : pure component densities /kg/m^3
+        Ki (optional,array_like): Gordon-Taylor parameters         /-
+    Returns:
+        ndarray:   
+        glass transition temperature of a mixture  /K 
+    """
+    xi=wi/Mi/np.sum(wi/Mi,axis=0)
+    Voi=Mi/rho0i/1000.
+    nc=len(xi)
+    chi_mat=np.zeros((nc,nc))
+    chi_mat[np.triu_indices(nc, k=1)]=chi
+    chi_mat[np.tril_indices(nc,k=-1)]=chi
+    def Vi(xi): return xi*Voi/np.sum(xi*Voi,axis=0)
+    def delGERT(xi): return np.sum(xi*np.log(Vi(xi)),axis=0)+np.sum((chi_mat@Vi(xi))*xi,axis=0)
+    h=1E-26
+    idx=-1
+    lnai=np.zeros(nc)
+    for i in range(nc):
+        dx = np.zeros(nc, dtype = 'c16')
+        dx[i] = h * 1j
+        dx[idx] = - h * 1j 
+        lnai[i]=np.imag((delGERT(xi+dx))/h)
+    return lnai-np.log(xi)
 
-        THFaktor=2*ni*cs.jacobian(lnai,ni)-cs.sum2(ni*cs.jacobian(lnai,ni))
-        THFaktor_fun=cs.Function("TH_fun",[ni],[THFaktor])
-        #print(THFaktor.shape)
-        ai_fun=cs.Function("ai_fun",[ni],[ai])
-        wi_fun=cs.Function("wi_fun",[ni],[wi])
-        self.wi_fun=wi_fun
-        self.ai_fun=ai_fun
-        self.THFaktor_fun=THFaktor_fun
-        #wi_fun=cs.Function("gammai_fun",[ni],[wi])
-    def Isotherm(self):
-        self.FH()
-        ai_fun=self.ai_fun
-        wi_fun=self.wi_fun
-        THFaktor_fun=self.THFaktor_fun
-        n=1000
-        x2vec=cs.linspace(0,1,n)
-
-        x1vec=1-x2vec
-        xvec=cs.horzcat(x1vec,x2vec)
-        aivec=np.asarray([ai_fun(xvec[i,:]).full().T[0] for i in range(n)])
-        wivec=np.asarray([wi_fun(xvec[i,:]).full().T[0] for i in range(n)])
-        THivec=np.asarray([THFaktor_fun(xvec[i,:]).full().T for i in range(n)])
-        return wivec,aivec,THivec
