@@ -1,7 +1,7 @@
 
 import numpy as np
 
-def lnai(wi,Mi,chi=None):
+def lnai(wi,rho0i,Mi,chi=None):
     """
     Compute the glass transition temperature of a mixture  
     
@@ -14,12 +14,14 @@ def lnai(wi,Mi,chi=None):
         logarithmic activity of component i  /K 
     """
     xi=wi/Mi/np.sum(wi/Mi,axis=0)
-    ri=Mi/np.min(Mi)
+    v0i=Mi/rho0i
+    ri=v0i/v0i[np.argmin(Mi)]#Mi/np.min(Mi)
+    rmix=np.sum(xi*ri,axis=0)
     nc=len(xi)
     chi_mat=np.zeros((nc,nc))
     chi_mat[np.triu_indices(nc, k=1)]=chi
     def Vi(xi): return xi*ri/np.sum(xi*ri,axis=0)
-    def delGERT(xi): return np.sum(Vi(xi)/ri*np.log(Vi(xi)),axis=0)+np.sum(chi_mat*np.outer(Vi(xi),Vi(xi)))
+    def delGERT(xi): return np.sum(xi*np.log(Vi(xi)/xi),axis=0)+np.sum(chi_mat*np.outer(Vi(xi),Vi(xi))*np.sum(xi*ri,axis=0))
     h=1E-26
     idx=-1
     lngi=np.zeros(nc)
@@ -30,14 +32,18 @@ def lnai(wi,Mi,chi=None):
         lngi[i]=np.imag((delGERT(xi+dx))/h)
     return lngi+np.log(xi)
 
-# Mi=np.asarray([18.015,721])
+# Mi=np.asarray([18.015,720.948])
 # rho0i=np.asarray([997.,1150.])
 # chi=np.asarray([2.272])
-# w1=np.linspace(0.01,0.07,100)
+# w1=np.linspace(0.001,0.05,100)
 # w2=1-w1
 
 # wi=np.stack((w1,w2))
 
-# lnaivec=np.asarray([lnai(wi[:,i],Mi,chi=chi) for i,val in enumerate(wi[0,:])]).T
+# lnaivec=np.asarray([lnai(wi[:,i],rho0i,Mi,chi=chi) for i,val in enumerate(wi[0,:])]).T
 # RH=np.exp(lnaivec[0,:])
 
+# import matplotlib.pyplot as plt
+# plt.plot(RH,w1)
+# plt.show()
+# plt.show()
