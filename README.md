@@ -9,7 +9,10 @@ pip install .
 ```
 
 # Getting started
-check out the jupyter notebooks in the examples folder 
+check out the jupyter notebooks in the [examples](https://github.com/Borrdom/Pylomer/tree/main/examples) folder.
+[Flory](https://github.com/Borrdom/Pylomer/tree/main/examples/example_FloryHuggins.ipynb)
+[GordonTaylor](https://github.com/Borrdom/Pylomer/tree/main/examples/example_GordonTaylor.ipynb)
+[Crank](https://github.com/Borrdom/Pylomer/tree/main/examples/example_Crank.ipynb)
 
 # Documentation
 can be found [here](https://borrdom.github.io/Pylomer/docs/index.html).
