@@ -281,7 +281,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Pylomer.FloryHuggins.lngi"><code class="docutils literal notranslate"><span class="pre">lngi()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Pylomer.FloryHuggins.lnai"><code class="docutils literal notranslate"><span class="pre">lnai()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -305,26 +305,25 @@ document.write(`
 <h3>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h3>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#Pylomer.FloryHuggins.lngi" title="Pylomer.FloryHuggins.lngi"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lngi</span></code></a>(wi, Mi, rho0i[, chi])</p></td>
-<td><p>Compute the glass transition temperature of a mixture</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Pylomer.FloryHuggins.lnai" title="Pylomer.FloryHuggins.lnai"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lnai</span></code></a>(wi, rho0i, Mi[, chi])</p></td>
+<td><p>Compute the log activity of a mixture</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py function">
-<dt class="sig sig-object py" id="Pylomer.FloryHuggins.lngi">
-<span class="sig-prename descclassname"><span class="pre">Pylomer.FloryHuggins.</span></span><span class="sig-name descname"><span class="pre">lngi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho0i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Pylomer.FloryHuggins.lngi" title="Permalink to this definition">#</a></dt>
-<dd><p>Compute the glass transition temperature of a mixture</p>
+<dt class="sig sig-object py" id="Pylomer.FloryHuggins.lnai">
+<span class="sig-prename descclassname"><span class="pre">Pylomer.FloryHuggins.</span></span><span class="sig-name descname"><span class="pre">lnai</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho0i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Pylomer.FloryHuggins.lnai" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the log activity of a mixture</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>wi</strong> (<em>array_like</em>) – 2D Array of weight fractions [number of components,number of Points]</p></li>
-<li><p><strong>Mi</strong> (<em>array_like</em>) – pure component glass transition temperature /K</p></li>
-<li><p><strong>rho0i</strong> (<em>optional</em><em>,</em><em>array_like</em>) – pure component densities /kg/m^3</p></li>
-<li><p><strong>Ki</strong> (<em>optional</em><em>,</em><em>array_like</em>) – Gordon-Taylor parameters         /-</p></li>
+<li><p><strong>wi</strong> (<em>array_like</em>) – weight fractions number of components</p></li>
+<li><p><strong>Mi</strong> (<em>array_like</em>) – Molar mass / g/mol</p></li>
+<li><p><strong>chi</strong> (<em>optional</em><em>,</em><em>array_like</em>) – Flory Huggins Chi Prameter        /-</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>glass transition temperature of a mixture  /K</p>
+<dd class="field-even"><p>logarithmic activity of component i  /K</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>ndarray</p>
@@ -386,7 +385,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Pylomer.FloryHuggins.lngi"><code class="docutils literal notranslate"><span class="pre">lngi()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#Pylomer.FloryHuggins.lnai"><code class="docutils literal notranslate"><span class="pre">lnai()</span></code></a></li>
 </ul>
 </li>
 </ul>

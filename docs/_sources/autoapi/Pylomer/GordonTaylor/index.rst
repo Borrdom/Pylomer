@@ -13,11 +13,11 @@ Functions
 
 .. autoapisummary::
 
-   Pylomer.GordonTaylor.Tggt
+   Pylomer.GordonTaylor.TgGT
 
 
 
-.. py:function:: Tggt(wi, Tg0i, q, Ki=None, rho0i=None)
+.. py:function:: TgGT(wi, Tg0i, q=0, Ki=None, rho0i=None)
 
    Compute the glass transition temperature of a mixture
 

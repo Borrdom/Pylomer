@@ -26,8 +26,8 @@ Functions
 
    Pylomer.crank
    Pylomer.BH_Model
-   Pylomer.lngi
-   Pylomer.Tggt
+   Pylomer.lnai
+   Pylomer.TgGT
 
 
 
@@ -74,24 +74,22 @@ Functions
    :rtype: ndarray
 
 
-.. py:function:: lngi(wi, Mi, rho0i, chi=None)
+.. py:function:: lnai(wi, rho0i, Mi, chi=None)
 
-   Compute the glass transition temperature of a mixture
+   Compute the log activity of a mixture
 
-   :param wi: 2D Array of weight fractions [number of components,number of Points]
+   :param wi: weight fractions number of components
    :type wi: array_like
-   :param Mi: pure component glass transition temperature /K
+   :param Mi: Molar mass / g/mol
    :type Mi: array_like
-   :param rho0i: pure component densities /kg/m^3
-   :type rho0i: optional,array_like
-   :param Ki: Gordon-Taylor parameters         /-
-   :type Ki: optional,array_like
+   :param chi: Flory Huggins Chi Prameter        /-
+   :type chi: optional,array_like
 
-   :returns: glass transition temperature of a mixture  /K
+   :returns: logarithmic activity of component i  /K
    :rtype: ndarray
 
 
-.. py:function:: Tggt(wi, Tg0i, q, Ki=None, rho0i=None)
+.. py:function:: TgGT(wi, Tg0i, q=0, Ki=None, rho0i=None)
 
    Compute the glass transition temperature of a mixture
 
