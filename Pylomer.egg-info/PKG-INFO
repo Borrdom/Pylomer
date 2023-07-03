@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: Pylomer
+Version: 0.0.2
+Summary: Provides the most basic implementations of thermodynamic and mechanical models centering around the modelling of polymers like Flory Huggins and Gordon Taylor
+Author-email: Dominik Borrmann <dominik.borrmann@tu-dortmund.de>
+License: BSD-3-Clause
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Pylomer
+Provides the most basic implementations of thermodynamic and mechanical models centering around the modelling of polymers like Flory Huggins and Gordon Taylor
