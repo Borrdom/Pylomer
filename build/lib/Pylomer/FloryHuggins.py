@@ -11,7 +11,7 @@ def lnai(wi,Mi,chi=None):
         chi (optional,array_like): Flory Huggins Chi Prameter        /-
     Returns:
         ndarray:   
-        glass transition temperature of a mixture  /K 
+        logarithmic activity of component i  /K 
     """
     xi=wi/Mi/np.sum(wi/Mi,axis=0)
     ri=Mi/np.min(Mi)
@@ -30,14 +30,14 @@ def lnai(wi,Mi,chi=None):
         lngi[i]=np.imag((delGERT(xi+dx))/h)
     return lngi+np.log(xi)
 
-Mi=np.asarray([18.015,721])
-rho0i=np.asarray([997.,1150.])
-chi=np.asarray([2.272])
-w1=np.linspace(0.01,0.07,100)
-w2=1-w1
+# Mi=np.asarray([18.015,721])
+# rho0i=np.asarray([997.,1150.])
+# chi=np.asarray([2.272])
+# w1=np.linspace(0.01,0.07,100)
+# w2=1-w1
 
-wi=np.stack((w1,w2))
+# wi=np.stack((w1,w2))
 
-lnaivec=np.asarray([lnai(wi[:,i],Mi,chi=chi) for i,val in enumerate(wi[0,:])]).T
-RH=np.exp(lnaivec[0,:])
+# lnaivec=np.asarray([lnai(wi[:,i],Mi,chi=chi) for i,val in enumerate(wi[0,:])]).T
+# RH=np.exp(lnaivec[0,:])
 

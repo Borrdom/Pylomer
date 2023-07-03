@@ -1,2 +1,2 @@
 # Pylomer
-Provides the most basic implementations of thermodynamic and mechanical models centering around the modelling of polymers like Flory Huggins and Gordon Taylor
+Provides the most basic implementations of the Flory Huggins GE-model, the Gordon Taylor equation and the crank equation for 1D Diffusion
