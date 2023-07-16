@@ -11,16 +11,21 @@ license = {text = "BSD-3-Clause"}
 
 dependencies = [
     "numpy"]
+classifiers = [
+"Programming Language :: Rust",
+"Programming Language :: Python"
+]
+
 
 [build-system]
 requires = [
   "setuptools >= 40.9.0",
   "wheel",
-]
-[tool.setuptools.packages.find]
-include = ["Pylomer"]
+  "maturin>=1.0,<2.0"]
+build-backend = "maturin"
 
 
-
-
-
+[tool.maturin]
+bindings = "pyo3"
+features = ["pyo3/extension-module"]
+module-name = "Pylomer.rust_module.rust"

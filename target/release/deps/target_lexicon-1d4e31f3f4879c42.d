@@ -1,0 +1,15 @@
+C:\GitHub_Projects\Pylomer\target\release\deps\target_lexicon-1d4e31f3f4879c42.rmeta: C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\lib.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\data_model.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\host.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\parse_error.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\targets.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\triple.rs C:\GitHub_Projects\Pylomer\target\release\build\target-lexicon-0e583f5f3d1fbb3f\out/host.rs
+
+C:\GitHub_Projects\Pylomer\target\release\deps\libtarget_lexicon-1d4e31f3f4879c42.rlib: C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\lib.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\data_model.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\host.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\parse_error.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\targets.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\triple.rs C:\GitHub_Projects\Pylomer\target\release\build\target-lexicon-0e583f5f3d1fbb3f\out/host.rs
+
+C:\GitHub_Projects\Pylomer\target\release\deps\target_lexicon-1d4e31f3f4879c42.d: C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\lib.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\data_model.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\host.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\parse_error.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\targets.rs C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\triple.rs C:\GitHub_Projects\Pylomer\target\release\build\target-lexicon-0e583f5f3d1fbb3f\out/host.rs
+
+C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\lib.rs:
+C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\data_model.rs:
+C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\host.rs:
+C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\parse_error.rs:
+C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\targets.rs:
+C:\Users\domin\.cargo\registry\src\github.com-1ecc6299db9ec823\target-lexicon-0.12.9\src\triple.rs:
+C:\GitHub_Projects\Pylomer\target\release\build\target-lexicon-0e583f5f3d1fbb3f\out/host.rs:
+
+# env-dep:OUT_DIR=C:\\GitHub_Projects\\Pylomer\\target\\release\\build\\target-lexicon-0e583f5f3d1fbb3f\\out
