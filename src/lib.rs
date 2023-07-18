@@ -5,7 +5,6 @@ use eqsolver::ODESolver;
 #[pymodule]
 fn rust(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(is_prime, m)?)?;
-    m.add_function(wrap_pyfunction!(is_prime2, m)?)?;
     m.add_function(wrap_pyfunction!(ode_example, m)?)?;
     Ok(())
 }
@@ -13,17 +12,6 @@ fn rust(_py: Python, m: &PyModule) -> PyResult<()> {
   
 #[pyfunction] 
 fn is_prime(num: u32) -> bool {
-    match num {
-        0 | 1 => false,
-        _ => {
-            let limit = (num as f32).sqrt() as u32; 
-
-            (2..=limit).any(|i| num % i == 0) == false
-        }
-    }
-}
-#[pyfunction] 
-fn is_prime2(num: u32) -> bool {
     match num {
         0 | 1 => false,
         _ => {
