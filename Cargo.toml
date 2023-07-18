@@ -15,4 +15,5 @@ crate-type = ["cdylib"]
 
 [dependencies]
 pyo3 = { version = "0.19.1", features = ["extension-module"] }
+eqsolver = "0.1.2"
 
